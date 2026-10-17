@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>gallery-dl</Name>
+  <Repository>ghcr.io/manojkarthick/gallery-dl:latest</Repository>
+  <Registry>https://github.com/manojkarthick/gallery-dl/pkgs/container/gallery-dl</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/manojkarthick/gallery-dl/issues</Support>
+  <Project>https://github.com/manojkarthick/gallery-dl</Project>
+  <Overview>Docker image for gallery-dl, a command-line program to download image galleries and collections from several image hosting sites.[br][br]The container runs once and exits. Set the URL to download in Post Arguments (Advanced View), and start it on a schedule, e.g. with the User Scripts plugin.</Overview>
+  <Category>Downloaders:</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/manojkarthick/gallery-dl/master/gallery-dl.xml</TemplateURL>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs>-d /downloads --config /config/gallery-dl.conf --cookies /config/cookies.txt "https://example.com/replace-with-your-url"</PostArgs>
+  <CPUset/>
+  <DateInstalled/>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Docker image for gallery-dl, a command-line program to download image galleries and collections from several image hosting sites.[br][br]Place your gallery-dl.conf (and cookies.txt, if the site needs a login) in the AppData directory, then replace the example URL in Post Arguments.</Description>
+  <Config
+    Name="Download Directory"
+    Target="/downloads"
+    Default="/mnt/user/downloads/gallery-dl/"
+    Mode="rw"
+    Description="Directory where downloaded media will be saved."
+    Type="Path"
+    Display="always"
+    Required="true"
+    Mask="false">/mnt/user/downloads/gallery-dl/</Config>
+  <Config
+    Name="AppData (Config)"
+    Target="/config"
+    Default="/mnt/user/appdata/gallery-dl/"
+    Mode="rw"
+    Description="Directory containing gallery-dl.conf and an optional cookies.txt. gallery-dl may write refreshed cookies back to cookies.txt."
+    Type="Path"
+    Display="always"
+    Required="true"
+    Mask="false">/mnt/user/appdata/gallery-dl/</Config>
+</Container>

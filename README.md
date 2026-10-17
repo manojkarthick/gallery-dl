@@ -39,6 +39,16 @@ docker run --rm \
   ghcr.io/manojkarthick/gallery-dl <URL>
 ```
 
+### Unraid
+
+[`gallery-dl.xml`](gallery-dl.xml) is an Unraid container template. Copy it to `/boot/config/plugins/dockerMan/templates-user/my-gallery-dl.xml`, then add the container from Docker > Add Container > Template.
+
+The container runs once and exits. Before starting it:
+
+1. Put `gallery-dl.conf` (and `cookies.txt`, if the site needs a login) in the AppData directory.
+2. Replace the example URL in Post Arguments (Advanced View).
+3. Schedule `docker start -a gallery-dl`, e.g. with the User Scripts plugin.
+
 ## License
 
 See [LICENSE](LICENSE) for details.
