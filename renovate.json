@@ -4,5 +4,12 @@
         ":automergeAll",
         "config:best-practices",
         "customManagers:dockerfileVersions"
+    ],
+    "packageRules": [
+        {
+            "description": "Require manual review for major updates",
+            "matchUpdateTypes": ["major"],
+            "automerge": false
+        }
     ]
 }
