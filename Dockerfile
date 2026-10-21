@@ -1,4 +1,4 @@
-FROM python:3.15-slim@sha256:2da676046630d7bf14c6764ae1143dc7fa0377a53f94bf5a642f0b214aca5bce
+FROM python:3.15-slim@sha256:f2dbcc4d0a7ff47b0f35724b56f778ccf0460eb119542f15444ab61ddc416435
 
 # renovate: datasource=pypi depName=gallery-dl versioning=pep440
 ARG GALLERY_DL_VERSION=1.32.17
